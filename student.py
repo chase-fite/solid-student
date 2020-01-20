@@ -4,6 +4,7 @@ class Student:
         self.__last_name = last_name
         self.__age = age
         self.__cohort_number = cohort_number
+        self.__full_name = f'{first_name} {last_name}'
 
     @property
     def first_name(self):
@@ -52,3 +53,10 @@ class Student:
     @property
     def full_name(self):
         return f'{self.__first_name} {self.__last_name}'
+
+    def __str__(self):
+        return f'{self.__full_name} is {self.__age} and is in cohort {self.__cohort_number}'
+
+mike = Student('Mike', 'Ellis', 39, 37)
+
+print(mike)
